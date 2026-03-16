@@ -1,0 +1,44 @@
+aid: presto-foundation
+name: Presto Foundation
+description: >-
+  The Presto Foundation is a Linux Foundation project supporting Presto, an open source distributed SQL query engine for big data analytics. Founded by Facebook (Meta), Uber, Twitter, and Alibaba, it enables interactive analytics across diverse data sources at massive scale.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - SQL
+  - Analytics
+  - Big Data
+  - Linux Foundation
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: presto-foundation:presto-foundation-api
+    name: Presto Foundation API
+    description: >-
+      Programmatic access to Presto distributed SQL query APIs, connector interfaces, and big data analytics resources.
+    humanURL: https://prestodb.io/docs/current/
+    tags:
+  - SQL
+  - Analytics
+  - Big Data
+  - Linux Foundation
+    properties:
+      - type: Documentation
+        url: https://prestodb.io/docs/current/
+common:
+  - type: Documentation
+    name: Presto Foundation Documentation
+    description: Official documentation for Presto Foundation.
+    url: https://prestodb.io/docs/current/
+  - type: GitHubOrg
+    name: Presto Foundation GitHub
+    description: Source code and repositories for Presto Foundation.
+    url: https://github.com/prestodb
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
