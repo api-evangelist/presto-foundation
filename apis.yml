@@ -7,10 +7,10 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - SQL
   - Analytics
   - Big Data
   - Linux Foundation
+  - SQL
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -23,10 +23,10 @@ apis:
       Programmatic access to Presto distributed SQL query APIs, connector interfaces, and big data analytics resources.
     humanURL: https://prestodb.io/docs/current/
     tags:
-      - SQL
       - Analytics
       - Big Data
       - Linux Foundation
+      - SQL
     properties:
       - type: Documentation
         url: https://prestodb.io/docs/current/
