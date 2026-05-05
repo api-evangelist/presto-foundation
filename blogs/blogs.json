@@ -1,0 +1,13 @@
+{
+  "repo": "presto-foundation",
+  "feeds": [
+    {
+      "source": "https://prestodb.io/blog/",
+      "feed_url": "https://prestodb.io/feed/",
+      "saved": 10,
+      "title": "PrestoDB"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:34:13Z"
+}
