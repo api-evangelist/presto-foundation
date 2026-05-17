@@ -47,7 +47,7 @@ apis:
         url: https://prestodb.io/docs/current/develop/client-protocol.html
       - type: REST API Reference
         url: https://prestodb.io/docs/current/rest.html
-      - type: GitHub Repository
+      - type: GitHubRepository
         url: https://github.com/prestodb/presto
   - aid: presto-foundation:presto-coordinator-rest-api
     name: Presto Coordinator REST API
@@ -93,7 +93,7 @@ common:
     url: https://prestodb.io/events/
   - type: Resources
     url: https://prestodb.io/resources/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/prestodb
   - type: Slack
     url: https://communityinviter.com/apps/prestodb/prestodb
