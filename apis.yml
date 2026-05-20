@@ -79,6 +79,8 @@ apis:
       - type: Task Resource
         url: https://prestodb.io/docs/current/rest/task.html
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/presto-foundation
   - type: Portal
     url: https://prestodb.io/
   - type: Documentation
