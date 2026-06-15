@@ -2,7 +2,7 @@
 
 The Presto Foundation is a Linux Foundation project supporting Presto, an open source distributed SQL query engine for big data analytics. Founded by Facebook (Meta), Uber, Twitter, and Alibaba, Presto enables interactive analytics across diverse data sources at massive scale, with a vendor-neutral governance model and an active ecosystem of contributors and integrations.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml)
 
 ## Scope
 
@@ -12,7 +12,13 @@ The Presto Foundation is a Linux Foundation project supporting Presto, an open s
 
 ## Tags
 
-- Analytics, Big Data, Distributed SQL, Linux Foundation, Open Source, Query Engine, SQL
+- Analytics
+- Big Data
+- Distributed SQL
+- Linux Foundation
+- Open Source
+- Query Engine
+- SQL
 
 ## Timestamps
 
@@ -25,39 +31,52 @@ The Presto Foundation is a Linux Foundation project supporting Presto, an open s
 
 The Presto Client REST API is the HTTP protocol used by Presto clients to submit SQL queries to a Presto coordinator and stream back results. It centers on POST /v1/statement to submit a query, GET on the returned nextUri to fetch subsequent result batches, and DELETE on nextUri to cancel a running query. Session context such as user, source, catalog, schema, time zone, and language is conveyed through X-Presto-* headers, and supports authentication mechanisms including Kerberos, LDAP, password files, OAuth 2.0, and custom authenticators.
 
-**Human URL:** [https://prestodb.io/docs/current/develop/client-protocol.html](https://prestodb.io/docs/current/develop/client-protocol.html)
+- **Human URL:** [https://prestodb.io/docs/current/develop/client-protocol.html](https://prestodb.io/docs/current/develop/client-protocol.html)
 
 #### Tags
 
-- Analytics, Big Data, Client Protocol, REST API, SQL
+- Analytics
+- Big Data
+- Client Protocol
+- REST API
+- SQL
 
 #### Properties
 
 - [Documentation](https://prestodb.io/docs/current/develop/client-protocol.html)
-- [REST API Reference](https://prestodb.io/docs/current/rest.html)
+- [R E S T  A P I  Reference](https://prestodb.io/docs/current/rest.html)
 - [GitHub Repository](https://github.com/prestodb/presto)
+- [Postman Collection](collections/presto-foundation.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/presto-foundation.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Presto Coordinator REST API
 
 The Presto Coordinator REST API exposes resources for inspecting and managing a running Presto cluster, including Node, Query, Stage, Statement, and Task resources. These endpoints are served by the coordinator process and are used by clients, monitoring tools, and the Presto worker protocol to coordinate distributed query execution and observe cluster health.
 
-**Human URL:** [https://prestodb.io/docs/current/rest.html](https://prestodb.io/docs/current/rest.html)
+- **Human URL:** [https://prestodb.io/docs/current/rest.html](https://prestodb.io/docs/current/rest.html)
 
 #### Tags
 
-- Analytics, Big Data, Cluster Management, REST API, SQL
+- Analytics
+- Big Data
+- Cluster Management
+- REST API
+- SQL
 
 #### Properties
 
 - [Documentation](https://prestodb.io/docs/current/rest.html)
-- [Node Resource](https://prestodb.io/docs/current/rest/node.html)
-- [Query Resource](https://prestodb.io/docs/current/rest/query.html)
-- [Stage Resource](https://prestodb.io/docs/current/rest/stage.html)
-- [Statement Resource](https://prestodb.io/docs/current/rest/statement.html)
-- [Task Resource](https://prestodb.io/docs/current/rest/task.html)
+- [Node  Resource](https://prestodb.io/docs/current/rest/node.html)
+- [Query  Resource](https://prestodb.io/docs/current/rest/query.html)
+- [Stage  Resource](https://prestodb.io/docs/current/rest/stage.html)
+- [Statement  Resource](https://prestodb.io/docs/current/rest/statement.html)
+- [Task  Resource](https://prestodb.io/docs/current/rest/task.html)
+- [Postman Collection](collections/presto-foundation.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/presto-foundation.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
+- [LinkedIn](https://www.linkedin.com/company/presto-foundation)
 - [Portal](https://prestodb.io/)
 - [Documentation](https://prestodb.io/docs/current/)
 - [Foundation](https://prestodb.io/foundation/)
@@ -69,10 +88,9 @@ The Presto Coordinator REST API exposes resources for inspecting and managing a 
 - [Slack](https://communityinviter.com/apps/prestodb/prestodb)
 - [Twitter](https://twitter.com/prestodb)
 - [YouTube](https://www.youtube.com/c/PrestoDB)
-- [Linux Foundation](https://www.linuxfoundation.org/projects/case-studies/presto/)
+- [Linux  Foundation](https://www.linuxfoundation.org/projects/case-studies/presto/)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** info@apievangelist.com

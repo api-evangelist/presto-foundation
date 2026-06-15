@@ -1,0 +1,815 @@
+{
+  "item": [
+    {
+      "id": "584a7f97-4f89-4b6a-9b4e-fcc84cd0e8ef",
+      "name": "Statement",
+      "description": {
+        "content": "Submit, page, and cancel SQL queries.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aa1a1a90-3097-4b7a-b5fd-86381a6ce6ef",
+          "name": "Submit a SQL statement",
+          "request": {
+            "name": "Submit a SQL statement",
+            "description": {
+              "content": "Submits a SQL query to the Presto coordinator. The request body is the\nraw SQL text. Returns a QueryResults JSON document that may include an\ninitial columns/data batch and a nextUri to follow for subsequent pages.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "statement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "binaryResults",
+                  "value": "false",
+                  "description": "Request binary-format result pages."
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{coordinator}}",
+                  "key": "coordinator"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Session user.",
+                "key": "X-Presto-User",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Client software name.",
+                "key": "X-Presto-Source",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Catalog",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Schema",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Time-Zone",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Language",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "description": "Comma-separated session properties (name=value).",
+                "key": "X-Presto-Session",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Role",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Transaction-Id",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Presto-Trace-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "a638ec91-842d-49ac-9ffc-5ddfb57b261e",
+              "name": "Initial QueryResults document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "binaryResults",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{coordinator}}",
+                      "key": "coordinator"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Session user.",
+                    "key": "X-Presto-User",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Client software name.",
+                    "key": "X-Presto-Source",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Catalog",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Schema",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Time-Zone",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Language",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Comma-separated session properties (name=value).",
+                    "key": "X-Presto-Session",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Role",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Transaction-Id",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Trace-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "SELECT 1"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Set-Catalog",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Set-Schema",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Set-Session",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Clear-Session",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Started-Transaction-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Presto-Clear-Transaction-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"infoUri\": \"http://RWMeOiXZbHI.wkdF\",\n  \"nextUri\": \"https://ivAYHVMoqbKIlyWMjgoGxgnhMTuD.rcj1RIc4hni+LHvIk4+4pztMd+zZ3DD9IVl06Bvc5Ik+Uu3sjp2C+Z\",\n  \"partialCancelUri\": \"http://nfMLBEjnXbI.shzJkWSLd5K9fZsxPtv.QYybKxV-Kz44VSfoqRO-hZYCTugtCXcL7NJjM\",\n  \"columns\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"data\": [\n    [],\n    []\n  ],\n  \"stats\": {\n    \"key_0\": \"string\"\n  },\n  \"error\": {\n    \"key_0\": true,\n    \"key_1\": true,\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3d0134b-ed0f-4138-ad25-c63adc5eaf2f",
+              "name": "Server busy. The client should retry after a delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "binaryResults",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{coordinator}}",
+                      "key": "coordinator"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Session user.",
+                    "key": "X-Presto-User",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Client software name.",
+                    "key": "X-Presto-Source",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Catalog",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Schema",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Time-Zone",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Language",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Comma-separated session properties (name=value).",
+                    "key": "X-Presto-Session",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Role",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Transaction-Id",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-Trace-Token",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "SELECT 1"
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5cca7879-d54b-4656-b12d-016533f527d9",
+          "name": "Fetch the next batch of results",
+          "request": {
+            "name": "Fetch the next batch of results",
+            "description": {
+              "content": "Follows the nextUri returned by a previous response to retrieve the next\nbatch of results for the given query. The path shape here mirrors the\ncoordinator's nextUri scheme; clients should always use the literal\nnextUri returned in the previous response rather than constructing it.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "statement",
+                ":queryId",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "queryId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{coordinator}}",
+                  "key": "coordinator"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Presto-User",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6631db6d-c048-4c1c-b96b-7764bf70be77",
+              "name": "Next QueryResults batch.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "statement",
+                    ":queryId",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queryId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{coordinator}}",
+                      "key": "coordinator"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-User",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"infoUri\": \"http://RWMeOiXZbHI.wkdF\",\n  \"nextUri\": \"https://ivAYHVMoqbKIlyWMjgoGxgnhMTuD.rcj1RIc4hni+LHvIk4+4pztMd+zZ3DD9IVl06Bvc5Ik+Uu3sjp2C+Z\",\n  \"partialCancelUri\": \"http://nfMLBEjnXbI.shzJkWSLd5K9fZsxPtv.QYybKxV-Kz44VSfoqRO-hZYCTugtCXcL7NJjM\",\n  \"columns\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"data\": [\n    [],\n    []\n  ],\n  \"stats\": {\n    \"key_0\": \"string\"\n  },\n  \"error\": {\n    \"key_0\": true,\n    \"key_1\": true,\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f10bacad-05d4-45ac-a018-4144adfd33e4",
+              "name": "Server busy. Retry the same nextUri after a delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "statement",
+                    ":queryId",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queryId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{coordinator}}",
+                      "key": "coordinator"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "X-Presto-User",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b206f1a3-3c57-470d-ac2f-aa05c747ed0d",
+          "name": "Cancel a running query",
+          "request": {
+            "name": "Cancel a running query",
+            "description": {
+              "content": "DELETE on a query's nextUri cancels the running query. Clients should\ndelete the most recent nextUri received for the query.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "statement",
+                ":queryId",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "queryId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{coordinator}}",
+                  "key": "coordinator"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df1b2102-0378-4105-8c68-b129f0b13ef0",
+              "name": "Cancellation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "statement",
+                    ":queryId",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "queryId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{coordinator}}",
+                      "key": "coordinator"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "coordinator"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8080",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{coordinator}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "334e3284-49f1-4b5d-bd35-db7a3eb6b14d",
+    "name": "Presto Client REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Presto Client REST API is the HTTP protocol used by Presto clients to\nsubmit SQL queries to a Presto coordinator and stream back results. Queries\nare submitted with POST /v1/statement, subsequent result pages are fetched\nby following the nextUri returned in each response, and queries can be\ncancelled by issuing DELETE on the nextUri. Session context such as user,\ncatalog, schema, time zone, and language is conveyed through X-Presto-*\nrequest headers; coordinators echo back X-Presto-Set-* / X-Presto-Clear-*\nresponse headers that clients must propagate on subsequent requests.\n\nSupported authentication mechanisms on the coordinator include Kerberos,\nLDAP, password files, OAuth 2.0, and custom authenticators.\n\n\nContact Support:\n Name: Presto Foundation",
+      "type": "text/plain"
+    }
+  }
+}
