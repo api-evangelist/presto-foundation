@@ -3,19 +3,10 @@
   "feeds": [
     {
       "source": "https://prestodb.io/blog/",
-      "feed_url": "https://prestodb.io/blog/feed/",
-      "title": "",
       "saved": 0,
-      "method": "discovered"
-    },
-    {
-      "source": "https://prestodb.io/foundation/",
-      "feed_url": "https://prestodb.io/foundation/",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "error": "HTTP 403 Forbidden on blog listing"
     }
   ],
-  "post_count": 15,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 17,
+  "fetched": "2026-06-27T13:03:00Z"
 }
