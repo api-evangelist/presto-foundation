@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/presto-foundation-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Basic auth, typically used with LDAP or password-file authenticators.
+  sources:
+  - openapi/presto-foundation-openapi.yml
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://example.com/oauth/authorize
+    tokenUrl: https://example.com/oauth/token
+    scopes: 0
+  description: OAuth 2.0 authenticator (when enabled on the coordinator).
+  sources:
+  - openapi/presto-foundation-openapi.yml

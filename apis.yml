@@ -79,6 +79,8 @@ apis:
       - type: Task Resource
         url: https://prestodb.io/docs/current/rest/task.html
 common:
+  - type: DomainSecurity
+    url: security/presto-foundation-domain-security.yml
   - type: Authentication
     url: authentication/presto-foundation-authentication.yml
   - type: OAuthScopes
