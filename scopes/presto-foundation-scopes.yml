@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/presto-foundation-openapi.yml
+docs: https://prestodb.io/docs/current/security/oauth2.html
+note: Presto does not publish its own OAuth scopes; OAuth 2.0 is an optional coordinator
+  authenticator using OIDC where scopes (e.g. openid, email, profile) are configured
+  per deployment via http-server.authentication.oauth2.scopes for the external identity
+  provider (https://prestodb.io/docs/current/security/oauth2.html).
+schemes:
+- name: oauth2
+  source: openapi/presto-foundation-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://example.com/oauth/authorize
+    tokenUrl: https://example.com/oauth/token
+  description: OAuth 2.0 authenticator (when enabled on the coordinator).
+scopes: []

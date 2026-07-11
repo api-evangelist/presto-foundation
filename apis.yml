@@ -79,6 +79,10 @@ apis:
       - type: Task Resource
         url: https://prestodb.io/docs/current/rest/task.html
 common:
+  - type: Authentication
+    url: authentication/presto-foundation-authentication.yml
+  - type: OAuthScopes
+    url: scopes/presto-foundation-scopes.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/presto-foundation
   - type: Portal
