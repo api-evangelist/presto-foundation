@@ -2,11 +2,10 @@
   "repo": "presto-foundation",
   "feeds": [
     {
-      "source": "https://prestodb.io/blog/",
-      "saved": 0,
-      "error": "HTTP 403 Forbidden on blog listing"
+      "source": "https://prestodb.io/foundation/",
+      "error": "HTTPError"
     }
   ],
   "post_count": 17,
-  "fetched": "2026-06-27T13:03:00Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
