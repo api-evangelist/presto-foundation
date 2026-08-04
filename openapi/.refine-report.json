@@ -1,0 +1,14 @@
+{
+  "provider": "presto-foundation",
+  "sources": [
+    "presto-foundation-statement-api-openapi.yml"
+  ],
+  "outputs": [
+    "presto-foundation-statement-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

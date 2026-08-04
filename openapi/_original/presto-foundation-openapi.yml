@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: Presto Client REST API
+  description: |
+    The Presto Client REST API is the HTTP protocol used by Presto clients to
+    submit SQL queries to a Presto coordinator and stream back results. Queries
+    are submitted with POST /v1/statement, subsequent result pages are fetched
+    by following the nextUri returned in each response, and queries can be
+    cancelled by issuing DELETE on the nextUri. Session context such as user,
+    catalog, schema, time zone, and language is conveyed through X-Presto-*
+    request headers; coordinators echo back X-Presto-Set-* / X-Presto-Clear-*
+    response headers that clients must propagate on subsequent requests.
+
+    Supported authentication mechanisms on the coordinator include Kerberos,
+    LDAP, password files, OAuth 2.0, and custom authenticators.
+  version: "0.290"
+  contact:
+    name: Presto Foundation
+    url: https://prestodb.io/
+  license:
+    name: Apache 2.0
+    url: https://github.com/prestodb/presto/blob/master/LICENSE
+servers:
+  - url: http://{coordinator}:{port}
+    description: Presto coordinator
+    variables:
+      coordinator:
+        default: localhost
+      port:
+        default: "8080"
+tags:
+  - name: Statement
+    description: Submit, page, and cancel SQL queries.
+paths:
+  /v1/statement:
+    post:
+      tags: [Statement]
+      summary: Submit a SQL statement
+      description: |
+        Submits a SQL query to the Presto coordinator. The request body is the
+        raw SQL text. Returns a QueryResults JSON document that may include an
+        initial columns/data batch and a nextUri to follow for subsequent pages.
+      operationId: submitStatement
+      parameters:
+        - { name: X-Presto-User, in: header, required: true, schema: { type: string }, description: Session user. }
+        - { name: X-Presto-Source, in: header, schema: { type: string }, description: Client software name. }
+        - { name: X-Presto-Catalog, in: header, schema: { type: string } }
+        - { name: X-Presto-Schema, in: header, schema: { type: string } }
+        - { name: X-Presto-Time-Zone, in: header, schema: { type: string } }
+        - { name: X-Presto-Language, in: header, schema: { type: string } }
+        - { name: X-Presto-Session, in: header, schema: { type: string }, description: Comma-separated session properties (name=value). }
+        - { name: X-Presto-Role, in: header, schema: { type: string } }
+        - { name: X-Presto-Transaction-Id, in: header, schema: { type: string } }
+        - { name: X-Presto-Trace-Token, in: header, schema: { type: string } }
+        - { name: binaryResults, in: query, schema: { type: boolean, default: false }, description: Request binary-format result pages. }
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              example: SELECT 1
+      responses:
+        "200":
+          description: Initial QueryResults document.
+          headers:
+            X-Presto-Set-Catalog: { schema: { type: string } }
+            X-Presto-Set-Schema: { schema: { type: string } }
+            X-Presto-Set-Session: { schema: { type: string } }
+            X-Presto-Clear-Session: { schema: { type: string } }
+            X-Presto-Started-Transaction-Id: { schema: { type: string } }
+            X-Presto-Clear-Transaction-Id: { schema: { type: string } }
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/QueryResults" }
+        "503":
+          description: Server busy. The client should retry after a delay.
+  /v1/statement/{queryId}/{token}:
+    get:
+      tags: [Statement]
+      summary: Fetch the next batch of results
+      description: |
+        Follows the nextUri returned by a previous response to retrieve the next
+        batch of results for the given query. The path shape here mirrors the
+        coordinator's nextUri scheme; clients should always use the literal
+        nextUri returned in the previous response rather than constructing it.
+      operationId: getStatementResults
+      parameters:
+        - { name: queryId, in: path, required: true, schema: { type: string } }
+        - { name: token, in: path, required: true, schema: { type: string } }
+        - { name: X-Presto-User, in: header, schema: { type: string } }
+      responses:
+        "200":
+          description: Next QueryResults batch.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/QueryResults" }
+        "503":
+          description: Server busy. Retry the same nextUri after a delay.
+    delete:
+      tags: [Statement]
+      summary: Cancel a running query
+      description: |
+        DELETE on a query's nextUri cancels the running query. Clients should
+        delete the most recent nextUri received for the query.
+      operationId: cancelStatement
+      parameters:
+        - { name: queryId, in: path, required: true, schema: { type: string } }
+        - { name: token, in: path, required: true, schema: { type: string } }
+      responses:
+        "204":
+          description: Cancellation accepted.
+components:
+  schemas:
+    QueryResults:
+      type: object
+      description: One page of query results returned by the coordinator.
+      properties:
+        id: { type: string, description: Server-assigned query id. }
+        infoUri: { type: string, format: uri }
+        nextUri: { type: string, format: uri, description: URI to fetch the next page; absent when the query is complete. }
+        partialCancelUri: { type: string, format: uri }
+        columns:
+          type: array
+          items:
+            type: object
+            properties:
+              name: { type: string }
+              type: { type: string }
+        data:
+          type: array
+          items:
+            type: array
+            items: {}
+        stats:
+          type: object
+          additionalProperties: true
+        error:
+          type: object
+          additionalProperties: true
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic auth, typically used with LDAP or password-file authenticators.
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authenticator (when enabled on the coordinator).
+      flows:
+        authorizationCode:
+          authorizationUrl: https://example.com/oauth/authorize
+          tokenUrl: https://example.com/oauth/token
+          scopes: {}
+security: []
