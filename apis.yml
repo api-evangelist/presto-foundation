@@ -97,6 +97,9 @@ apis:
   - type: OpenAPI
     url: openapi/presto-foundation-statement-api-openapi.yml
 common:
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/prestodb/presto/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/presto-foundation-agentic-access.yml
   - type: DomainSecurity
