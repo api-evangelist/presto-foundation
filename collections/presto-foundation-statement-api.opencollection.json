@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Presto Client REST Statement API",
+    "version": "0.290"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Statement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit a SQL statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{coordinator}:{port}/v1/statement",
+            "headers": [
+              {
+                "name": "X-Presto-User",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Source",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Catalog",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Schema",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Time-Zone",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Language",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Session",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Role",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Transaction-Id",
+                "value": ""
+              },
+              {
+                "name": "X-Presto-Trace-Token",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "binaryResults",
+                "value": "",
+                "type": "query",
+                "description": "Request binary-format result pages."
+              }
+            ]
+          },
+          "docs": "Submits a SQL query to the Presto coordinator. The request body is the\nraw SQL text. Returns a QueryResults JSON document that may include an\ninitial columns/data batch and a nextUri to follow for subsequent pages.\n"
+        },
+        {
+          "info": {
+            "name": "Fetch the next batch of results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{coordinator}:{port}/v1/statement/:queryId/:token",
+            "headers": [
+              {
+                "name": "X-Presto-User",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "queryId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Follows the nextUri returned by a previous response to retrieve the next\nbatch of results for the given query. The path shape here mirrors the\ncoordinator's nextUri scheme; clients should always use the literal\nnextUri returned in the previous response rather than constructing it.\n"
+        },
+        {
+          "info": {
+            "name": "Cancel a running query",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{coordinator}:{port}/v1/statement/:queryId/:token",
+            "params": [
+              {
+                "name": "queryId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DELETE on a query's nextUri cancels the running query. Clients should\ndelete the most recent nextUri received for the query.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
