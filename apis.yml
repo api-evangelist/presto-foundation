@@ -7,6 +7,19 @@ description: >-
   analytics across diverse data sources at massive scale, with a vendor-neutral
   governance model and an active ecosystem of contributors and integrations.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -105,6 +118,14 @@ apis:
   - type: OpenAPI
     url: openapi/presto-foundation-statement-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/prestodb/presto/issues
+  - type: Releases
+    url: https://github.com/prestodb/presto/releases
+  - type: CodeOfConduct
+    url: https://github.com/prestodb/presto/blob/master/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/prestodb/presto/blob/master/CONTRIBUTING.md
   - type: License
     name: Apache-2.0
     url: https://github.com/prestodb/presto/blob/master/LICENSE
