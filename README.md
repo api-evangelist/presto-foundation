@@ -1,4 +1,4 @@
-# Presto Foundation (presto-foundation)
+# Presto Foundation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,95 +66,124 @@
 
 The Presto Foundation is a Linux Foundation project supporting Presto, an open source distributed SQL query engine for big data analytics. Founded by Facebook (Meta), Uber, Twitter, and Alibaba, Presto enables interactive analytics across diverse data sources at massive scale, with a vendor-neutral governance model and an active ecosystem of contributors and integrations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/presto-foundation/refs/heads/main/apis.yml)
+**Areas:** Analytics · Big Data · Distributed SQL · Linux Foundation · Open Source · Query Engine · SQL
 
-## Scope
+## Presto Foundation on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Presto Foundation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/presto-foundation/](https://apis.io/providers/presto-foundation/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Analytics
-- Big Data
-- Distributed SQL
-- Linux Foundation
-- Open Source
-- Query Engine
-- SQL
+- [Presto Client REST API](https://apis.io/apis/presto-foundation/presto-client-rest-api/) — The Presto Client REST API is the HTTP protocol used by Presto clients to submit SQL queries to a Presto coordinator and stream back results. It centers on…
+- [Presto Coordinator REST API](https://apis.io/apis/presto-foundation/presto-coordinator-rest-api/) — The Presto Coordinator REST API exposes resources for inspecting and managing a running Presto cluster, including Node, Query, Stage, Statement, and Task…
+- [Presto Foundation Statement API](https://apis.io/apis/presto-foundation/presto-foundation-statement-api/) — Submit, page, and cancel SQL queries.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Presto Client REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Presto Client REST API is the HTTP protocol used by Presto clients to submit SQL queries to a Presto coordinator and stream back results. It centers on POST /v1/statement to submit a query, GET on the returned nextUri to fetch subsequent result batches, and DELETE on nextUri to cancel a running query. Session context such as user, source, catalog, schema, time zone, and language is conveyed through X-Presto-* headers, and supports authentication mechanisms including Kerberos, LDAP, password files, OAuth 2.0, and custom authenticators.
+- [Presto Foundation Agentic Access](https://apis.io/agentic-access/presto-foundation/presto-foundation-agentic-access/)
 
-- **Human URL:** [https://prestodb.io/docs/current/develop/client-protocol.html](https://prestodb.io/docs/current/develop/client-protocol.html)
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Analytics
-- Big Data
-- Client Protocol
-- REST API
-- SQL
+- [Presto Client REST API](https://apis.io/collections/presto-foundation/open-presto-foundation/)
+- [Presto Client REST Statement API](https://apis.io/collections/presto-foundation/open-presto-foundation-statement-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://prestodb.io/docs/current/develop/client-protocol.html)
-- [R E S T  A P I  Reference](https://prestodb.io/docs/current/rest.html)
-- [GitHub Repository](https://github.com/prestodb/presto)
-- [Postman Collection](collections/presto-foundation.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/presto-foundation.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Presto Coordinator REST API
+- [Presto Foundation Authentication](https://apis.io/security/presto-foundation/presto-foundation-authentication/)
+- [Presto Foundation Domain Security](https://apis.io/security/presto-foundation/presto-foundation-domain-security/)
 
-The Presto Coordinator REST API exposes resources for inspecting and managing a running Presto cluster, including Node, Query, Stage, Statement, and Task resources. These endpoints are served by the coordinator process and are used by clients, monitoring tools, and the Presto worker protocol to coordinate distributed query execution and observe cluster health.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://prestodb.io/docs/current/rest.html](https://prestodb.io/docs/current/rest.html)
+The permissions the API asks for.
 
-#### Tags
+- [Presto Foundation Scopes](https://apis.io/scopes/presto-foundation/presto-foundation-scopes/)
 
-- Analytics
-- Big Data
-- Cluster Management
-- REST API
-- SQL
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://prestodb.io/docs/current/rest.html)
-- [Node  Resource](https://prestodb.io/docs/current/rest/node.html)
-- [Query  Resource](https://prestodb.io/docs/current/rest/query.html)
-- [Stage  Resource](https://prestodb.io/docs/current/rest/stage.html)
-- [Statement  Resource](https://prestodb.io/docs/current/rest/statement.html)
-- [Task  Resource](https://prestodb.io/docs/current/rest/task.html)
-- [Postman Collection](collections/presto-foundation.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/presto-foundation.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Presto Foundation Plans Pricing](https://apis.io/plans/presto-foundation/presto-foundation-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
 
-- [LinkedIn](https://www.linkedin.com/company/presto-foundation)
-- [Portal](https://prestodb.io/)
+Published request limits.
+
+- [Presto Foundation Rate Limits](https://apis.io/rate-limits/presto-foundation/presto-foundation-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Presto Foundation Finops](https://apis.io/finops/presto-foundation/presto-foundation-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.prestodb.io/)
 - [Documentation](https://prestodb.io/docs/current/)
-- [Foundation](https://prestodb.io/foundation/)
 - [Blog](https://prestodb.io/blog/)
-- [Community](https://prestodb.io/community/)
-- [Events](https://prestodb.io/events/)
-- [Resources](https://prestodb.io/resources/)
-- [GitHub Organization](https://github.com/prestodb)
-- [Slack](https://communityinviter.com/apps/prestodb/prestodb)
-- [Twitter](https://twitter.com/prestodb)
-- [YouTube](https://www.youtube.com/c/PrestoDB)
-- [Linux  Foundation](https://www.linuxfoundation.org/projects/case-studies/presto/)
+- [GitHub](https://github.com/prestodb)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 32.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 42.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 27.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/presto-foundation/](https://apis.io/providers/presto-foundation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Presto Foundation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/presto-foundation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
